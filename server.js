@@ -13,7 +13,7 @@ connectDB();
 const helmetConfig = {
   contentSecurityPolicy: {
     directives: {
-      defaultSrc: ["'self'"],
+      defaultSrc: ["'self'", 'https://api.userfront.com'],
       scriptSrc: ["'self'", "'unsafe-inline'", process.env.APP_URL],
       styleSrc: ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"],
       imgSrc: ["'self'", 'https://*.com'],
