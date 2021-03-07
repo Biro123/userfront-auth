@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <div>
-      <h2>Home Page</h2>
+      <h2>Home Page.</h2>
       <pre>User: {userData.name}</pre>
     </div>
   );
