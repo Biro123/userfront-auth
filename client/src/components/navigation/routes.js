@@ -4,9 +4,9 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import HomeIcon from '@material-ui/icons/HomeRounded';
 
 import Members from '../content/Members';
-import { PasswordReset } from '../auth/userfrontAuth'
-import SignIn from '../auth/SignIn';
-import SignUp from '../auth/SignUp';
+import { PasswordReset, SignUp, SignIn } from '../auth/userfrontAuth'
+// import SignIn from '../auth/SignIn';
+// import SignUp from '../auth/SignUp';
 import SignOut from '../auth/SignOut';
 import Home from '../content/Home';
 
