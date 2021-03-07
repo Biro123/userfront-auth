@@ -26,7 +26,7 @@ const helmetConfig = {
 };
 
 // Init Middlewre
-// app.use(helmet(helmetConfig));  
+app.use(helmet(helmetConfig));  
 app.use(express.json({ extended: false }));
 
 // Define routes
