@@ -9,7 +9,10 @@ const app = express();
 // Connect to database
 connectDB();
 
-// define security policy
+// Define security policy
+// The following are only for the userfront pwd reset form:
+//         defaultSrc: 'https://api.userfront.com', 'https://api.anymod.com/'
+//         scriptSrc:   unsafe-eval
 const helmetConfig = {
   contentSecurityPolicy: {
     directives: {
