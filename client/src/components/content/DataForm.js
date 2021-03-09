@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function DataForm() {
+export default function DataForm(props) {
   const classes = useStyles();  
   const alertState = useAlertState();
   const userState = useUserState();
@@ -51,7 +51,8 @@ export default function DataForm() {
     const body = JSON.stringify(formData.get());
     try {
       const res = await axios.post('/api/data', body, config);
-      // todo update state here to sho wnew post?
+      props.onNewData(res.data);
+      formData.set({text: ''});
     } catch (err) {      
       const errors = err.response.data ? err.response.data.errors : null;      
       if (errors) {
@@ -81,6 +82,14 @@ export default function DataForm() {
     return (
       <Typography variant='body1' color='secondary'>
           Log in to add items
+      </Typography>
+    )    
+  }
+
+  if (!userState.user.confirmedAt) {
+    return (
+      <Typography variant='body1' color='secondary'>
+          Verify your account to add items
       </Typography>
     )    
   }

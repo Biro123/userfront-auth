@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div>
       <h2>Home Page.</h2>
-      <pre>User: {userData.name}</pre>
+      <pre>User: {userDataString.user}</pre>
     </div>
   );
 }

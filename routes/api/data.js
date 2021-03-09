@@ -52,6 +52,9 @@ router.post('/', [
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
+    if (!req.auth.isConfirmed) {
+      return res.status(403).json({ errors: [{msg: 'Account not verified.'}] });
+    }
 
     try {
       // const user = await User.findById(req.user.id).select('-password');

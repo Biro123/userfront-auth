@@ -37,6 +37,10 @@ const Data = () => {
   }
 
   const { data, status } = state.get();
+
+  const handleNewData = (newEntry) => {
+    state.data.set(data => [...data, newEntry]);
+  }
   
   return (
     <>
@@ -50,7 +54,7 @@ const Data = () => {
         </Card>
         // <p key={index}>{entry.text}</p>
       )}
-      <DataForm />
+      <DataForm onNewData={handleNewData}/>
     </>
   )
 }

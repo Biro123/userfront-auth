@@ -6,7 +6,7 @@ module.exports = function(req, res, next) {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
   if (token == null) 
-    return res.status(401).json({ msg: 'No token, authorisation denied' }); 
+    return res.status(401).json({ errors: [{ msg: 'No token, authorisation denied' }] }); 
   
   // convert provided pbase64 pem to plain
   // Look in get-started -> tokens in UserFront for key 
@@ -21,7 +21,7 @@ module.exports = function(req, res, next) {
     // execute callback
     next();
   } catch (err) {
-    res.status(403).json({ msg: 'Token is not valid' });
+    res.status(403).json({ errors: [{ msg: 'Token is not valid' }] });
   }
 };
 
