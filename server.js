@@ -19,7 +19,7 @@ const helmetConfig = {
       defaultSrc: ["'self'", 'https://api.userfront.com', 'https://api.anymod.com/'],
       scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", process.env.APP_URL],
       styleSrc: ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"],
-      imgSrc: ["'self'", "'data:image/png+svg+xml'", 'https://*.com'],
+      imgSrc: ["'self'", 'data:', 'https://*.com'],
       fontSrc: ["'self'", 'https://*.com', 'data:']
     },
   }
