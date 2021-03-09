@@ -41,19 +41,18 @@ const App = () => {
           <AppNavBar />
           <AlertMessage />
           <SideBar />
-          <Switch>            
-            {routes().map((route) => (
-              <Route exact path={route.path} key={route.path}>
-                <route.component />
-              </Route>
-            ))}
-            <Route path= '/dashboard'> // todo userfront not properly redirecting
-              <Redirect to='/home' />
-            </Route>   
-            <Route path= '/'>
-              <Redirect to='/home' />
-            </Route>    
-          </Switch>          
+          <div style={{ paddingTop: '1em' }}>
+            <Switch>            
+              {routes().map((route) => (
+                <Route exact path={route.path} key={route.path}>
+                  <route.component />
+                </Route>
+              ))}
+              <Route path= '/'>
+                <Redirect to='/home' />
+              </Route>    
+            </Switch>
+          </div>          
         </ThemeProvider>        
       </Router>      
     </div>

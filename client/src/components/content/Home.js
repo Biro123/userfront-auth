@@ -8,8 +8,8 @@ const Home = () => {
 
   return (
     <div>
-      <h2>Home Page.</h2>
-      <pre>User: {userDataString.user}</pre>
+      <h2>Home Page</h2>
+      <pre>User: {userData.name}</pre>
     </div>
   );
 }
